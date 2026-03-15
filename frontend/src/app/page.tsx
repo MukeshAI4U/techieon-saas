@@ -1,8 +1,10 @@
+cd ~/techieon-saas
+
+cat << 'EOF' > frontend/src/app/page.tsx
 "use client";
 
 import { useState } from "react";
 
-// Define what a Lead looks like so TypeScript is happy
 interface Lead {
   name: string;
   phone: string;
@@ -31,7 +33,6 @@ export default function Dashboard() {
     setStats(null);
 
     try {
-      // Use the live backend URL if available
       const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5001";
       const response = await fetch(`${apiUrl}/api/leads/search`, {
         method: "POST",
@@ -189,3 +190,4 @@ export default function Dashboard() {
     </div>
   );
 }
+EOF
