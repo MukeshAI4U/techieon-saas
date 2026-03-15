@@ -1,3 +1,6 @@
+cd ~/techieon-saas
+
+cat << 'EOF' > frontend/src/app/page.tsx
 "use client";
 
 import { useState } from "react";
@@ -187,3 +190,4 @@ export default function Dashboard() {
     </div>
   );
 }
+EOF
